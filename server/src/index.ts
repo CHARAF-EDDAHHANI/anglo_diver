@@ -6,6 +6,7 @@ import courseRoutes from './routes/course.routes';
 import lessonRoutes from './routes/lesson.routes';
 import exerciseRoutes from './routes/exercise.routes';
 import studentRoutes from './routes/student.routes';
+import { apiLimiter } from './middleware/rateLimiter';
 
 dotenv.config();
 
@@ -15,6 +16,9 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Apply general rate limiting to all API routes
+app.use('/api', apiLimiter);
 
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Anglo Diver API is running' });
