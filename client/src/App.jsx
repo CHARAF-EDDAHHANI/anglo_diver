@@ -1,19 +1,20 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Box } from '@mui/material';
-import ErrorBoundary from './component/ErrorBoundary';
-import  Dashboard from './pages/Dashboard';
+import  TeacherDashboard from "./pages/TeacherDashboard";
+
+
+import Header from './component/Header.jsx';
 const App = () => {
 
   return (
     <Router>
       <Header/>
-      <Box sx={{ mt: 8 }}>
-        <ErrorBoundary>
-          <Routes>
-            <Route path="/dashboard" element={<Dashboard />} />
+      <Box>         
+         <Routes>
+
+            <Route path="/dashboard" element={<TeacherDashboard />} />
           </Routes>
-        </ErrorBoundary>
       </Box>
     </Router>
   );

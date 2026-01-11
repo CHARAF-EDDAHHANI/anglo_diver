@@ -7,7 +7,9 @@ const __dirname = path.dirname(__filename);
 
 // Construct absolute paths
 const paths = {
-  admin: path.join(__dirname, '../DB_storage/admin.json'),
+  sessions: path.join(__dirname, '../data/sessions.json'),
+  quizzes: path.join(__dirname, '../data/quizzes.json'),
+
 };
 
 // Read JSON file
