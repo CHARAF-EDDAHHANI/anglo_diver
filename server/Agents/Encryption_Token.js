@@ -1,5 +1,11 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
+
+
+dotenv.config();
+const JWT_SECRET = process.env.JWT_SECRET;
+
 
 export async function Encryption(password) {
   const saltRounds = 5; 
@@ -23,7 +29,6 @@ export async function comparePWD(password, hashedPassword) {
 
 
 
-const JWT_SECRET = '@ngl0_Div3r_S3cr3t_K3y!2025';
 export const TokenGenerate = (adminId, email, userType) => {
   try {
     return jwt.sign(
