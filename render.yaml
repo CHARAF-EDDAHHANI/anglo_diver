@@ -1,0 +1,29 @@
+# Render service definitions for Anglo Diver
+# Replace placeholder values before deploying (do NOT commit real secrets).
+
+services:
+  - type: web_service
+    name: anglo-diver-server
+    env: node
+    branch: main
+    root: server
+    buildCommand: cd server && npm install
+    startCommand: cd server && npm start
+    autoDeploy: true
+    envVars:
+      - key: JWT_SECRET
+        value: REPLACE_WITH_YOUR_JWT_SECRET
+        sync: false
+
+  - type: static_site
+    name: anglo-diver-client
+    env: static
+    branch: main
+    root: client
+    buildCommand: cd client && npm install && npm run build
+    publishPath: dist
+    autoDeploy: true
+    envVars:
+      - key: VITE_API_PROD
+        value: REPLACE_WITH_SERVER_URL
+        sync: false

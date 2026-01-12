@@ -16,8 +16,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
-app.use("/api/quizzes", quizRoutes);
-app.use("/api/sessions", sessionRoutes);
+app.use("/quizzes", quizRoutes);
+app.use("/sessions", sessionRoutes);
 
 // Health check
 app.get("/healthz", (req, res) => {
