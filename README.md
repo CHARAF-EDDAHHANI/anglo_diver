@@ -1,57 +1,52 @@
-## Anglo Diver – Full-Stack Quiz & Session Platform
+# React_Language-learning-app
 
-Anglo Diver is a full-stack JavaScript application focused on clean architecture, RESTful API design, and automated testing.  
-The project demonstrates a production-ready backend structure combined with a modern React frontend.
-
----
-
-## Overview
-
-This application manages quizzes and learning sessions through a modular backend and a decoupled frontend.  
-The codebase follows clear separation of concerns and is structured to scale.
+A modern **React 19 frontend** for an English learning platform, built with **Vite, Material UI, Framer Motion, and React Router**.  
+This project demonstrates a **full-stack setup**, but the focus is on **frontend capabilities** , showcasing responsive UI, animations, internationalization, and modern React practices.
 
 ---
 
-## Tech Stack
+## Frontend Features
 
-Frontend:
-- React (Vite)
-- JavaScript (ES Modules)
+### User Experience
+- **Interactive Lessons** – Clean layout for exercises, lessons, and progress tracking.
+- **Smooth Navigation** – React Router for multi-page navigation.
+- **Responsive Design** – Works across desktop, tablet, and mobile devices.
+- **Animated UI** – Framer Motion for engaging transitions and modals.
+- **Dynamic Data Fetching** – Axios integrated for API calls to backend.
+- **Language & Localization** – i18n support for multi-language interface.
 
-Backend:
-- Node.js
-- Express
-- JSON-based data layer (abstracted for future database integration)
-
-Testing:
-- Jest
-- Supertest
-
-Tooling:
-- ESLint
-- Concurrently
+### UI & Design
+- **Material UI Components** – Buttons, cards, modals, date pickers, and tables.
+- **Consistent Theming** – Unified colors, spacing, and typography.
+- **Interactive Elements** – Hover effects, modals, forms with validation feedback.
 
 ---
 
-## Architecture
+## Frontend Tech Stack
 
-- Controllers handle request/response logic
-- Models encapsulate business logic and data access
-- Routes define RESTful endpoints
-- Frontend consumes APIs through isolated service modules
+- **React 19** – Functional components & hooks.
+- **Vite** – Fast development server and optimized build.
+- **Material UI** – Professional, responsive UI system.
+- **Framer Motion** – Animations for components and page transitions.
+- **React Router DOM** – Multi-page navigation.
+- **Axios** – API communication with backend.
+- **i18next / react-i18next** – Multilingual support.
+- **uuid** – Unique keys for dynamic elements.
 
-This structure improves maintainability, testability, and long-term scalability.
+#### Dev Tools
+- **ESLint** – Enforce code quality and consistency.
+- **Vitest + Testing Library** – Component testing.
+- **Concurrently** – Run frontend and backend simultaneously.
+- **Hot Module Replacement** – Fast UI updates during development.
 
 ---
 
-## Testing Strategy
+## Backend Overview (Minimal Focus)
 
-The project includes unit and integration tests covering core backend logic.
+- **Express 5** – REST API.
+- **JSON Web Token (JWT)** – Authentication.
+- **UUID** – Unique IDs for users or lessons.
+- **CORS & Body Parser** – For request handling.
+- **Nodemon** – Live reload during development.
 
-Tested components:
-- Quiz controller and model
-- Session controller and model
-
-Run tests with:
-```bash
-npm test
+> The backend is separated in `/server` folder; this project emphasizes frontend skills.
