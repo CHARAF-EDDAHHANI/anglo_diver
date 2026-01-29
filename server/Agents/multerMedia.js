@@ -3,15 +3,15 @@ import path from 'path';
 import fs from 'fs';
 
 // tmp uploadDir before processing 
-const tempDir = path.join(process.cwd(), 'data', 'media', 'tmp');
-if (!fs.existsSync(tempDir)) {
-    fs.mkdirSync(tempDir, { recursive: true });
+const baseDir = path.join(process.cwd(), 'data', 'media');
+if (!fs.existsSync(baseDir)) {
+    fs.mkdirSync(baseDir, { recursive: true });
 }
 
 // storage config
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, tempDir);
+        cb(null, baseDir);
     },
     filename: (req, file, cb) => {
         const uniqueName = Date.now() + '-' + Math.round(Math.random() * 1e9);

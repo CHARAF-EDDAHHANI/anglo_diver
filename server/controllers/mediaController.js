@@ -12,17 +12,12 @@ const folders = {
   video: path.join(baseDir, 'video'),
 };
 
-// ensure folders exist
-Object.values(folders).forEach((dir) => {
-  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-});
-
 // controller upload media
 export const uploadMediaController = async (req, res) => {
   try {
     const files = req.file ? [req.file] : req.files;
-    if (!files || files.lengh === 0 || !req.body.type) {
-      return res.status(400).json({ message: 'file(s) and type are required' });
+    if (!req.file && (!req.files || req.files.length === 0 )) {
+      return res.status(400).json({ message: 'no media provided' });
     }
 
     const mediaType = req.body.type.toLowerCase();
